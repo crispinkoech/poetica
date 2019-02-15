@@ -1,8 +1,8 @@
 import { Document, Types } from 'mongoose';
 
 interface IPoemRemark {
-    text?: string;
-    poem?: Types.ObjectId;
+    text: string;
+    poem: Types.ObjectId;
 }
 
 interface MPoemRemark extends IPoemRemark, Document { }
