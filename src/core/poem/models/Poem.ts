@@ -26,7 +26,7 @@ export default (mongooseClient: Mongoose): Model<MPoem> => {
 
         remarks: [{
             type: Schema.Types.ObjectId,
-            ref: 'Remark',
+            ref: 'PoemRemark',
         }],
     });
 
