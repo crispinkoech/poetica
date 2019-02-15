@@ -1,0 +1,7 @@
+{
+    "mongodb": {
+        "uri": "mongodb://localhost:27017/poetica"
+    },
+    "port": 3030,
+    "host": "localhost"
+}
