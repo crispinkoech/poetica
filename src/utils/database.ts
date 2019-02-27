@@ -4,17 +4,21 @@ import { Application } from '@feathersjs/feathers';
 import logger from './logger';
 
 const initialize = (app: Application) => {
-    const { uri, options } = app.get('mongodb');
+    try {
+        const { url, database, options } = app.get('mongodb');
 
-    mongoose.connect(uri, options, (err: any) => {
-        if (err) {
-            logger.error(err);
-        } else {
-            logger.info('Connection to database successful');
-        }
-    });
+        const uri = `${url}/${database}`;
 
-    app.set('mongooseClient', mongoose);
+        mongoose.connect(uri, options, (err: any) => {
+            if (err) {
+                logger.error(err);
+            }
+        });
+
+        app.set('mongooseClient', mongoose);
+    } catch (err) {
+        throw err;
+    }
 };
 
 export default initialize;
