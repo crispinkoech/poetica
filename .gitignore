@@ -1,3 +1,4 @@
 node_modules
 dist
 config/production.json
+.nyc_output
