@@ -6,7 +6,8 @@ const host: string = app.get('host');
 const port: number = app.get('port');
 const server = app.listen(port);
 
-process.on('unhandledRejection', (reason: string, p: Promise<any>) => {
+// Fix me later
+(process as NodeJS.EventEmitter).on('unhandledRejection', (reason: string, p: Promise<any>) => {
     logger.error('Unhandled rejection at: Promise ', p, reason);
 });
 
