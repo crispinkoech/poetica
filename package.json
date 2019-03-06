@@ -14,7 +14,7 @@
         "serve-ts": "ts-node --files src/index",
         "dev": "cross-env NODE_ENV=development nodemon -e ts -w ./src -x npm run serve-ts",
         "compile": "npm run lint && rm -rf dist/* && tsc",
-        "start": "npm run compile && cross-env NODE_ENV=production node ./dist/"
+        "start": "cross-env NODE_ENV=production node ./dist/"
     },
     "author": "Crispin Koech",
     "license": "ISC",
