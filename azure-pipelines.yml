@@ -18,7 +18,6 @@ steps:
 - task: Docker@1
   inputs:
     command: Run an image
-    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureContainerRegistry: $(azureContainerRegistry)
     imageName: mongo:3.4-jessie
   displayName: Run mongoDb instance
