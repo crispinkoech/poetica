@@ -20,6 +20,7 @@ steps:
     command: Run an image
     azureContainerRegistry: $(azureContainerRegistry)
     imageName: mongo:3.4-jessie
+    ports: 27017:27017
   displayName: Run mongoDb instance
 
 - script: |
