@@ -2,6 +2,9 @@
     "name": "poetica",
     "version": "1.0.0",
     "description": "Ars Poetica's Backend",
+    "engines": {
+        "node": "8.11.3"
+    },
     "directories": {
         "lib": "src",
         "test": "test/",
@@ -14,8 +17,11 @@
         "serve-ts": "ts-node --files src/index",
         "dev": "cross-env NODE_ENV=development nodemon -e ts -w ./src -x npm run serve-ts",
         "compile": "npm run lint && rm -rf dist/* && tsc",
-        "start": "cross-env NODE_ENV=production node ./dist/"
+        "start": "cross-env NODE_ENV=production node dist/index.js",
+        "build": "npm run compile"
     },
+    "heroku-run-build-script": true,
+
     "author": "Crispin Koech",
     "license": "ISC",
     "devDependencies": {
