@@ -1,9 +1,7 @@
 {
-    "mongodb": {
-        "options": {
-            "useCreateIndex": true, 
-            "useNewUrlParser": true
-        }
+    "mongodb.options": {
+        "useCreateIndex": true, 
+        "useNewUrlParser": true
     },
     "paginate": {
         "default": 10,

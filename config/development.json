@@ -1,8 +1,6 @@
 {
-    "mongodb": {
-        "url": "mongodb://localhost:27017",
-        "database": "poetica-dev"
-    },
+    "mongodb.url": "mongodb://localhost:27017",
+    "mongodb.database": "poetica-dev",
     "port": 3030,
     "host": "localhost"
 }
