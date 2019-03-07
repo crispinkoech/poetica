@@ -5,7 +5,9 @@ import logger from './logger';
 
 const initialize = (app: Application) => {
     try {
-        const { url, database, options } = app.get('mongodb');
+        const url = app.get('mongodb.url');
+        const database = app.get('mongodb.database');
+        const options = app.get('mongodb.options');
 
         const uri = `${url}/${database}`;
 

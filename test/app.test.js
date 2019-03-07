@@ -4,7 +4,7 @@ const logger = require('../dist/utils/logger').default;
 
 // Delete all records in test database
 before((done) => {
-    const { database } = app.get('mongodb');
+    const database = app.get('mongodb.database');
     const { collections } = mongoose.connections.find(db => db.name === database);
 
     try {
