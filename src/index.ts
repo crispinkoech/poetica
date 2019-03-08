@@ -1,9 +1,9 @@
 import app from './app';
 import logger from './utils/logger';
 
-// Start server
-const host: string = app.get('host');
-const port: number = app.get('port');
+// Start server: Use heroku configs in production mode
+const host: string = app.get('host') || process.env.HOST;
+const port: number = app.get('port') || process.env.PORT;
 const server = app.listen(port);
 
 // Fix me later
