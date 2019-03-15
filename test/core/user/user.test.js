@@ -48,6 +48,8 @@ describe('User service', () => {
             expect(result).to.have.property('_id');
             expect(result).to.have.property('verified');
             done();
+        }).catch((err) => {
+            throw err;
         });
     });
 
@@ -69,7 +71,9 @@ describe('User service', () => {
 
     it('fetches users', (done) => {
         userService.find({
-            email: 'crispin@email.com',
+            query: {
+                email: 'crispin@email.com',
+            },
         }).then((result) => {
             expect(result).to.have.property('data');
             expect(result.total).to.equal(1);
