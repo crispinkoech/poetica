@@ -13,6 +13,12 @@ export default (mongooseClient: Mongoose): Model<MPoemRemark> => {
             ref: 'Poem',
             required: [true, 'Poem id is required'],
         },
+
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: [true, 'User id is required'],
+        },
     });
 
     const model: Model<MPoemRemark> = mongooseClient.model('PoemRemark', poemRemarkSchema);
