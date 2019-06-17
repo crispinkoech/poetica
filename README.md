@@ -1,4 +1,4 @@
-# Arts Poetica's API service
+# Poetica
 > A FeathersJS application
 
 Exposes a set of endpoints/services that are consumable as a conventional REST API or via WebSockets.
