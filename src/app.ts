@@ -1,5 +1,5 @@
 import feathers from '@feathersjs/feathers';
-import express, { Application } from '@feathersjs/express';
+import express from '@feathersjs/express';
 import socketio from '@feathersjs/socketio';
 import configuration from '@feathersjs/configuration';
 
