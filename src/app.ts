@@ -1,5 +1,5 @@
 import feathers from '@feathersjs/feathers';
-import express, { Application } from '@feathersjs/express';
+import express from '@feathersjs/express';
 import socketio from '@feathersjs/socketio';
 import configuration from '@feathersjs/configuration';
 
@@ -14,7 +14,7 @@ app.configure(configuration());
 
 // Set up database, plugins and providers(transports)
 app.configure(express.rest());
-app.configure(socketio);
+app.configure(socketio());
 app.configure(database);
 
 // Enable body parsing

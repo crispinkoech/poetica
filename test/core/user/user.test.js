@@ -16,23 +16,11 @@ describe('User service', () => {
             // Name is missing
         };
 
-        const invalidData = {
-            email: 'invalid email',
-            password: 'password',
-            name: 'Crispin Koech',
-        };
-
         userService.create(nameless).then(() => {
             throw new Error('Test should have failed');
         }).catch((err) => {
             expect(err.errors.name.name).to.equal('ValidatorError');
-
-            userService.create(invalidData).then(() => {
-                throw new Error('Test should have failed');
-            }).catch((err2) => {
-                expect(err2.errors.email.name).to.equal('ValidatorError');
-                done();
-            });
+            done();
         });
     });
 
@@ -116,29 +104,6 @@ describe('User service', () => {
             const errMessage = `Cast to ObjectId failed for value "${id}" at path "_id" for model "User"`;
             expect(err.message).to.equal(errMessage);
             done();
-        });
-    });
-
-    it('throws when updating a user with invalid data', (done) => {
-        const invalidUpdates = {
-            email: 'invalid email',
-        };
-
-        userService.create({
-            email: 'McNuggets@email.com',
-            password: 'szechuan',
-            name: 'McNugget Szechuan Sauce',
-        }).then((user) => {
-            const { _id } = user;
-
-            userService.patch(_id, invalidUpdates).then(() => {
-                throw new Error('User should not have been updated with invalid field data');
-            }).catch((err) => {
-                expect(err.errors.email.name).to.equal('ValidatorError');
-                done();
-            });
-        }).catch(() => {
-            throw new Error('New user should have been created');
         });
     });
 
