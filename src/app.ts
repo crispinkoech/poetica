@@ -7,7 +7,7 @@ import core from './core';
 import database from './utils/database';
 import logger from './utils/logger';
 
-const app: Application<any> = express(feathers());
+const app = express(feathers());
 
 // Configure application
 app.configure(configuration());
