@@ -6,14 +6,6 @@ export default (moongooseClient: Mongoose): Model<MUser> => {
         email: {
             type: String,
             required: [true, 'Email is required'],
-            validate: {
-                validator: (email: string): boolean => {
-                    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return pattern.test(email);
-                },
-
-                message: (props: any): string => `${props.value} is not a valid email address`,
-            },
             unique: true,
         },
         password: {
