@@ -14,7 +14,7 @@ app.configure(configuration());
 
 // Set up database, plugins and providers(transports)
 app.configure(express.rest());
-app.configure(socketio);
+app.configure(socketio());
 app.configure(database);
 
 // Enable body parsing
