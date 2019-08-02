@@ -1,0 +1,6 @@
+{
+    "mongodb.url": "MONGO_URL",
+    "mongodb.database": "MONGO_DATABASE",
+    "port": 3030,
+    "host": "localhost"
+}
