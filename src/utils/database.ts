@@ -6,8 +6,8 @@ import logger from './logger';
 const initialize = (app: Application) => {
     try {
         // Use heroku configuration in production mode
-        const url = app.get('mongodb.url') || process.env.MONGO_URL;
-        const database = app.get('mongodb.database') || process.env.MONGO_DATABASE;
+        const url = app.get('mongodb.url');
+        const database = app.get('mongodb.database');
 
         const options = app.get('mongodb.options');
 
